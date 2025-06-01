@@ -1,0 +1,41 @@
+<h1>{{ title }}</h1>
+
+<form [formGroup]="dataUser" (ngSubmit)="onSubmit()">
+    <label>Name</label>
+    <input type="text" formControlName="name">
+
+    <label>Surname</label>
+    <input type="text" formControlName="surname">
+
+    <label>Phonenumber</label>
+    <input type="number" formControlName="phoneNumber">
+
+    <label>Birthday</label>
+    <input type="datetime" formControlName="birthday">
+
+    <button (click)="onSubmit()">Send</button>
+</form>
+
+<hr />
+
+<table border="1">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Phonenumber</th>
+            <th>Birthday</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataUser of userList">
+            <td>{{ dataUser.name }}</td>
+            <td>{{ dataUser.surname }}</td>
+            <td>{{ dataUser.phoneNumber }}</td>
+            <td>{{ dataUser.birthday }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
